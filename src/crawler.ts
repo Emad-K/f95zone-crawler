@@ -79,7 +79,7 @@ async function processPage(page: number): Promise<number> {
   return response.data.msg.pagination.total
 }
 
-async function crawl() {
+export async function crawl() {
   const progressBar = new cliProgress.SingleBar({
     format: 'Crawling [{bar}] {percentage}% | {value}/{total} Pages | Error: {lastError}',
     barCompleteChar: '\u2588',
@@ -156,5 +156,3 @@ async function crawl() {
     process.exit(0)
   }
 }
-
-crawl()

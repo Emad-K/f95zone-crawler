@@ -7,13 +7,11 @@
   "keywords": [],
   "main": "index.js",
   "scripts": {
-    "dev": "tsx src/crawler.ts",
+    "dev": "tsx src/index.ts",
     "build": "tsc",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "start": "node dist/crawler.js",
-    "crawl": "tsx src/crawler.ts",
-    "verify": "tsx src/verify.ts",
+    "start": "node dist/index.js",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",
@@ -23,7 +21,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@inquirer/prompts": "^8.0.1",
     "axios": "^1.13.2",
+    "cheerio": "^1.1.2",
     "cli-progress": "^3.12.0",
     "dotenv": "^17.2.3",
     "drizzle-orm": "^0.44.7",

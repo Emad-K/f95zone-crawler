@@ -41,3 +41,13 @@ export const prefixes = pgTable('prefixes', {
     pk: primaryKey({ columns: [table.id, table.type, table.category] }),
   }
 })
+
+export const threadDetails = pgTable('thread_details', {
+  id: serial('id').primaryKey(),
+  threadId: integer('thread_id').unique().notNull(),
+  overview: text('overview'),
+  hiddenOverview: text('hidden_overview'),
+  originalHtml: text('original_html'),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
+  updatedAt: timestamp('updated_at').defaultNow().notNull().$onUpdate(() => new Date()),
+})
